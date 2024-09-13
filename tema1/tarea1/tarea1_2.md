@@ -6,3 +6,7 @@
 
 ![fichero2](image-10.png)
 
+### Subir la rama remota
+
+![subirRama](image-11.png)
+
