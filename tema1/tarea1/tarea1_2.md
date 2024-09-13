@@ -10,3 +10,7 @@
 
 ![subirRama](image-11.png)
 
+### Merge de v0.2
+
+![merge](image-12.png)
+
