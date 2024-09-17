@@ -36,3 +36,22 @@ Segundo: elegir el cambio más acertado, pulsar el doble tick que aparece encima
 
 ![segundo](image-17.png)
 
+### Borrar Rama
+
+![borrar](image-18.png)
+
+### Listar Cambios
+
+![cambios](image-19.png)
+
+### Crear Organización
+
+![org](image-20.png)
+
+### Crear Equipos
+
+![team](image-21.png)
+
+![admin](image-22.png)
+
+![colab](image-23.png)
