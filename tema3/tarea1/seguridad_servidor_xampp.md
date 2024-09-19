@@ -1,10 +1,16 @@
 # Pasos para securizar el usuario root del Mysql
 
-1. Ir a la carpeta donde esta ubicado el xampp (en mi caso esta en opt/lampp)
+1. Ir al phpmyadmin a la sección de cuentas de usuario
 
-2. Ir a la carpeta de phpmyadmin
+2. Pulsar en "Editar privilegios" del usuario root de localhost
 
-3. Ir al fichero llamado "config.inc.php" y modificar lo siguiente (de normal te aparecera así)
+3. Ir a "Change password" y cambiarlo a algo adecuado
+
+4. Despues de que de error, ir a la carpeta donde esta ubicado el xampp (en mi caso esta en opt/lampp)
+
+5. Ir a la carpeta de phpmyadmin
+
+6. Ir al fichero llamado "config.inc.php" y modificar lo siguiente (de normal te aparecera así)
 
 ![imagen](https://github.com/user-attachments/assets/76456b55-a0d2-4309-8536-c67ef0b5e39d)
 
