@@ -1,4 +1,4 @@
-### GET
+# GET
 
 En el index.php
 
@@ -17,7 +17,7 @@ Salida
 ![imagen](https://github.com/user-attachments/assets/757605fc-7d78-442e-8f29-dd540b34b776)
 
 
-### POST
+# POST
 
 El index.php es igual pero cambiamos el atributo "method" y en lugar de get ponemos post
 
