@@ -10,7 +10,7 @@ Donde recogemos los datos
 
 El "$_POST" no hara nada, ya que en el html lo esta enviando como get
 
-Salida
+### Salida
 
 ![imagen](https://github.com/user-attachments/assets/dd23dff2-c296-4355-8b20-21094c890dbc)
 
@@ -25,7 +25,7 @@ El index.php es igual pero cambiamos el atributo "method" y en lugar de get pone
 
 Donde recogemos los datos se queda igual
 
-Salida
+### Salida
 
 ![imagen](https://github.com/user-attachments/assets/bc2a6d3c-0678-4493-846e-04a76fcdc153)
 
