@@ -38,6 +38,7 @@ El insert.php (asegurarse de que el fichero php se llama igual que el "action" d
         echo "mal";
     }
     mysqli_close($connection);
+    header("location: index.php");
 ```
 
 # Formulario de actualización de datos
@@ -83,6 +84,7 @@ El update.php (asegurarse de que el fichero php se llama igual que el "action" d
       echo "mal";
   }
   mysqli_close($connection);
+  header("location: index.php");
 ```
 
 # Formulario para borrar datos
@@ -122,4 +124,37 @@ El delete.php (asegurarse de que el fichero php se llama igual que el "action" d
       echo "mal";
   }
   mysqli_close($connection);
+  header("location: index.php");
+```
+
+# Tabla para ver los datos
+
+```php
+<table>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Fecha Creación</th>
+    </tr>
+    <?php
+        $connection = mysqli_connect(
+            'localhost',
+            'root',
+            '1q2w3e4r',
+            'prueba'
+        );
+    
+        $return = mysqli_query($connection, 'select * from users;');
+        while ($row = mysqli_fetch_assoc($return)) {
+            echo "<tr>
+                    <td>{$row['id']}</td>
+                    <td>{$row['name']}</td>
+                    <td>{$row['email']}</td>
+                    <td>{$row['created']}</td>
+                </tr>";
+        }
+        mysqli_close($connection);
+    ?>
+</table>
 ```
