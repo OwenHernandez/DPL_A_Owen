@@ -65,7 +65,3 @@ Después de realizar los cambios, reinicia el servicio para aplicar la configura
 ```bash
 sudo systemctl restart vsftpd
 ```
-
----
-
-Con esta configuración, puedes gestionar usuarios, habilitar logs detallados y asegurar las conexiones con SSL en **vsFTP**. Si necesitas más ayuda, no dudes en pedírmelo. 😊
