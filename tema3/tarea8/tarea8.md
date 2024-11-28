@@ -1,7 +1,3 @@
-Configurar SSL en un servidor Apache para un VirtualHost implica varios pasos. Aquí te explico cómo hacerlo en detalle:
-
----
-
 ### 1. **Generar un certificado SSL (opcional si ya tienes uno)**
 
 Si no tienes un certificado SSL, puedes generar uno autofirmado para pruebas o utilizar un certificado de una Autoridad de Certificación (CA).
