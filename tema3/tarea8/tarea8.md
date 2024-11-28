@@ -4,10 +4,13 @@ Si no tienes un certificado SSL, puedes generar uno autofirmado para pruebas o u
 
 #### Generar un certificado autofirmado:
 ```bash
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/certs/server.crt
+cd /etc/apache2/ssl
+sudo openssl genrsa -out server.key 2048
+sudo openssl req -new -key server.key -out server.csr
+sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```
 
-Este comando generará una clave privada (`server.key`) y un certificado (`server.crt`). Proporciona la información solicitada, como nombre de dominio (Common Name - CN).
+Estos comandos generarán una clave privada (`server.key`) y un certificado (`server.crt`). Proporciona la información solicitada, como nombre de dominio (Common Name - CN).
 
 ---
 
@@ -24,8 +27,13 @@ sudo systemctl restart apache2
 
 Edita el archivo de configuración de tu sitio web (por ejemplo, `/etc/apache2/sites-available/prueba1.com.conf`):
 ```bash
+cd /etc/apache2/sites-available
+sudo nano prueba1.com.conf
+```
+
+```bash
 <VirtualHost prueba1.com:443>
-    ServerName prueba1.com
+    ServerName "prueba1.com"
     ServerAlias prueba1.com
 
     DocumentRoot /var/www/prueba1
@@ -45,26 +53,9 @@ Edita el archivo de configuración de tu sitio web (por ejemplo, `/etc/apache2/s
 </VirtualHost>
 ```
 
-- Asegúrate de reemplazar `prueba1.com`, rutas, y nombres de archivo por los que correspondan a tu configuración.
-
 ---
 
-### 4. **Forzar redirección de HTTP a HTTPS (opcional)**
-
-Para redirigir todo el tráfico de HTTP a HTTPS, edita (o crea) un VirtualHost en el puerto `80`:
-
-```bash
-<VirtualHost prueba1.com:80>
-    ServerName prueba1.com
-    ServerAlias prueba1.com
-
-    Redirect permanent / https://mi-sitio.com/
-</VirtualHost>
-```
-
----
-
-### 5. **Activar el sitio y reiniciar Apache**
+### 4. **Activar el sitio y reiniciar Apache**
 
 Habilita el archivo de configuración del sitio y reinicia Apache:
 ```bash
@@ -74,7 +65,7 @@ sudo systemctl restart apache2
 
 ---
 
-### 6. **Verificar configuración**
+### 5. **Verificar configuración**
 Asegúrate de que Apache esté funcionando correctamente:
 ```bash
 sudo apachectl configtest
